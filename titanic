@@ -1,0 +1,24 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+data = pd.read_csv('p2.csv')
+data.head()
+
+data.info()
+
+data.isnull().sum()
+
+
+data.hist(bins=10, figsize=(10, 6))
+plt.tight_layout()
+plt.show()
+pd.plotting.scatter_matrix(data, figsize=(10, 6))
+plt.show()
+data.boxplot(column='Fare', by='Pclass')
+plt.show()
+
+data.fillna('', inplace=True)
+data.head()
+data.corr()
+data.max()
+
+data.groupby("Sex")[Survived"].sum().plot.bar()"
